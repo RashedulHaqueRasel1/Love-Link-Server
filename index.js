@@ -225,6 +225,7 @@ async function run() {
             if (existingUser) {
                 return res.send({ message: "user Already exist ", insertOne: null })
             }
+            // Bio Data Id Make
             const allBioData = await bioDataCollection.find().sort({ id: 1 }).toArray();
             users.id = allBioData.length + 1;
             const result = await bioDataCollection.insertOne({ ...users, id: allBioData.length + 1 });
@@ -286,7 +287,6 @@ async function run() {
 
 
 
-
         // ==================== Stripe Pay USD API ====================
         // Stripe intent Api Create with CheckOut Pages
         app.post("/create-payment-intent", async (req, res) => {
@@ -314,7 +314,7 @@ async function run() {
 
 
         // Make Premium Api with contact request (payment collection)
-        app.patch('/contact/premium/:id', async (req, res) => {
+        app.patch('/contact/premium/:id',verifyToken, async (req, res) => {
             const id = req.params.id;
             // console.log(id)
             const filter = { _id: new ObjectId(id) }
@@ -327,15 +327,15 @@ async function run() {
             res.send(result)
         })
 
-        //  show in paymentsCollection Approved contact request Admin in Mongo DB
-        app.get('/payments', verifyToken, async (req, res) => {
+        //  show in paymentsCollection Approved contact request Admin in Mongo DB (Admin dashboard)
+        app.get('/payments', verifyToken,verifyAdmin, async (req, res) => {
             const result = await paymentsCollection.find().toArray();
             res.send(result);
         })
 
 
         //  show in paymentsCollection Approved contact request Admin in Mongo DB
-        app.get('/allContact', verifyToken, async (req, res) => {
+        app.get('/allContact', verifyToken,verifyAdmin, async (req, res) => {
             const result = await paymentsCollection.find().toArray();
             res.send(result);
         })
@@ -384,8 +384,6 @@ async function run() {
     }
 }
 run().catch(console.dir);
-
-
 
 
 
