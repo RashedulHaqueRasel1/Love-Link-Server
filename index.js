@@ -164,7 +164,7 @@ async function run() {
         })
 
 
-        // // premium member Check Api (valid premium Or UnValid premium)
+        //  premium member Check Api (valid premium Or UnValid premium)
         app.get('/allContact/premium/:email', verifyToken, async (req, res) => {
             const email = req.params.email;
             // console.log(email) 
@@ -223,7 +223,7 @@ async function run() {
             const query = { email: users.email }
             const existingUser = await bioDataCollection.findOne(query);
             if (existingUser) {
-                return res.send({ message: "user Already exist ", insertOne: null })
+                return res.send({ message: "user Already exist. ", insertOne: null })
             }
             // Bio Data Id Make
             const allBioData = await bioDataCollection.find().sort({ id: 1 }).toArray();
