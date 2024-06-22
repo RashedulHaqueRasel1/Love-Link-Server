@@ -392,11 +392,7 @@ async function run() {
 
 
         // // Find  Data With Email ...
-        // app.get('/bioData/:email', async (req, res) => {
-        //     const result = await bioDataCollection.findOne({ email: req.params.email }).toArray();
-        //     res.send(result)
-        // }
-
+ 
  
 
         console.log("Pinged your deployment. You successfully connected to MongoDB!");
