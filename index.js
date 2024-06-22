@@ -14,6 +14,7 @@ app.use(
     cors({
       origin: [
         "http://localhost:5173",
+        "http://localhost:5174",
         "https://love-link-client.vercel.app"
       ]
     })
@@ -36,6 +37,7 @@ async function run() {
     try {
         // await client.connect();
 
+        // Mongo DB collection in Love Link
         const bioDataCollection = client.db("Love-Link").collection("bioData");
         const usersCollection = client.db("Love-Link").collection("users");
         const favouriteCollection = client.db("Love-Link").collection("favourite");
