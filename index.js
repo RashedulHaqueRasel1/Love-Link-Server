@@ -397,31 +397,6 @@ async function run() {
         //     res.send(result)
         // }
 
-
-        // // Update user data MongoDB...
-        // app.put('/users/:email', async (req, res) => {
-        //     const id =  req.params.email;
-        //     const updateUser = req.body;
-        //     const filter = { _id: new ObjectId(id) };
-        //     const options = { upsert: true };
-        //     const users = {
-        //         $set: {
-        //             photo: updateUser.photo,
-        //             name: updateUser.name,
-        //             email: updateUser.email,
-        //             status: updateUser.status
-        //         },
-        //     };
-
-        //     const result = await usersCollection.updateOne(filter, users, options);
-        //     res.send(result)
-        // })
-
-        // app.use((req, res, next) => {
-        //     req.user = { id: 1, name: 'John Doe' }; // Simulated authenticated user
-        //     next();
-        // });
-
  
 
         console.log("Pinged your deployment. You successfully connected to MongoDB!");
