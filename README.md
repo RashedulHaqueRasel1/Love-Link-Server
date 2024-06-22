@@ -4,3 +4,5 @@ Welcome to the Love Link server repository! This project powers the backend of t
 
 ## Live Link
 You can access the live platform at [Love Link](your-live-link-url). Love Link is an online matrimony platform where people can choose their life partners.
+
+[Server Site Live Link](https://love-link-server-nine.vercel.app)
