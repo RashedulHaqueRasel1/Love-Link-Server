@@ -184,7 +184,7 @@ async function run() {
 
 
 
-        // user data save (push) MongoDB
+        // user data save (push) MongoDB with user collection
         app.post('/users', async (req, res) => {
             const users = req.body;
             // USER email check
