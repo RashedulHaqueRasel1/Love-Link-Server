@@ -241,7 +241,7 @@ async function run() {
         })
 
 
-        // // // Find  Data With Email ...
+        // // Find  Data With Email ...
         app.get('/bioData/:email', async (req, res) => {
             const query = { email: req.params.email }
             const result = await bioDataCollection.findOne(query);
@@ -287,7 +287,7 @@ async function run() {
 
 
 
-        // ==================== Stripe Pay USD API ====================
+        // ================ Stripe Pay USD API =================
         // Stripe intent Api Create with CheckOut Pages
         app.post("/create-payment-intent", async (req, res) => {
             const { price } = req.body;
@@ -304,7 +304,7 @@ async function run() {
         })
 
 
-        // ==================== Dashboard Contact Request Api ====================
+        // ================== Dashboard Contact Request Api ==================
         // Payment related api  with CheckOut pages (payment collection)
         app.post('/payments', async (req, res) => {
             const payment = req.body;
